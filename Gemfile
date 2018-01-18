@@ -36,6 +36,8 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
 gem 'bootstrap', '~> 4.0.0'
 gem 'sprockets-rails'
+gem 'faker', '~> 1.8', '>= 1.8.7'
+gem 'pry-byebug'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
