@@ -15,6 +15,9 @@
 	<%= f.text_field :name %>
 	<br>
 
+	<%= f.select :category_id, @categories %>
+	<br>
+
 	<%= f.label :info, "Description" %>
 	<%= f.text_area :info, rows: 3, cols: 20 %>
 	<br>
