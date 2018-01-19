@@ -36,7 +36,7 @@ class BicyclesController < ApplicationController
 
   def destroy
     @bicycle.destroy
-    redirect_to bicycles
+    redirect_to bicycles_path
   end
 
   private
