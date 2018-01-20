@@ -3,11 +3,11 @@
 one:
   name: MyString
   info: MyString
-  price: 1
+  price: 9.99
   category: one
 
 two:
   name: MyString
   info: MyString
-  price: 1
+  price: 9.99
   category: two
