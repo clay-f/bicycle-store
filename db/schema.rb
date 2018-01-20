@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20180118201516) do
   create_table "bicycles", force: :cascade do |t|
     t.string "name"
     t.text "info"
-    t.decimal "price"
+    t.decimal "price", precision: 10, scale: 2
     t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
