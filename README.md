@@ -1,4 +1,0 @@
-### todo
-* model
-* test
-* controller

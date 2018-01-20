@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get 'store/index'
-
-  root 'bicycles#index'
+  root to: 'store#index'
+  
   resources :bicycles
   resources :categories
 end
