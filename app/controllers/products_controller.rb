@@ -15,15 +15,18 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @categories = Category.all.map { |i| [i.name, i.id] }
   end
 
   # GET /products/1/edit
   def edit
+    @categories = Category.all.map { |i| [i.name, i.id] }
   end
 
   # POST /products
   # POST /products.json
   def create
+
     @product = Product.new(product_params)
 
     respond_to do |format|
