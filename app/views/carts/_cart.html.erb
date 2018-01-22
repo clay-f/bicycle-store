@@ -1,13 +1,8 @@
 <h2>Your Cart</h2>
-
-<table>
-    <%= render cart.line_items %>
-
-    <tr>
-        <td>Total</td>
-        <td><%= number_to_currency(cart.total_price) %></td>
-    </tr>
-</table>
-
-<%= button_to 'Checkout', new_order_path, method: :get %>
-<%= button_to 'Empty cart', cart, method: :delete %>
+<ul>
+  <%= render @cart.line_items %>
+</ul>
+<%= number_to_currency(@cart.total_price) %>
+<%= button_to '结算', new_order_path, method: :get %>
+<br>
+<%= button_to '清空购物车', @cart, method: :delete %>
