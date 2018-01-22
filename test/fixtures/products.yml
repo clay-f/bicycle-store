@@ -11,3 +11,9 @@ two:
   info: MyString
   price: 9.99
   category: two
+
+foo:
+  name: foo
+  info: foo
+  price: 9.99
+  category: two
