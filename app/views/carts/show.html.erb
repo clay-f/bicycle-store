@@ -4,6 +4,9 @@
 
 <ul>
     <% @cart.line_items.each do |item| %>
-        <li><%= item.quantity %>&times;<%= item.product.name %></li>
+        <li><%= item.quantity %>&times;<%= item.product.name %> <%= number_to_currency(item.total_price) %></li>
     <% end %>
+
+    <p><%= number_to_currency(@cart.total_price) %></p>
+    <%= button_to 'Empty cart', @cart, method: :delete %>
 </ul>

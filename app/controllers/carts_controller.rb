@@ -37,10 +37,6 @@ class CartsController < ApplicationController
     @cart = Cart.find(params[:id])
   end
 
-  def cart_nod_found
-    redirect_to root_path
-  end
-
   def invalid_cart
     logger.error "Attempt to access invalid cart #{params[:id]}"
     redirect_to root_path, notice: 'Invalid cart'
