@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :line_items
   resources :products
-  resources :carts
+  resources :carts, only: [:create, :show, :destroy]
   resources :categories
 
   root to: 'store#index'

@@ -14,10 +14,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def create
-  end
-
   def logout
+    sessino[:user_id] = nil
+    redirect_to root_url
   end
 
 
