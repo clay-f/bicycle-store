@@ -1,0 +1,11 @@
+<%= form_with model: User.new, url: '/login' do |f| %>
+    <%= f.label :name, 'Name: ' %>
+    <%= f.text_field :name, required: true%>
+    <br>
+
+    <%= f.label :password, 'Password: ' %>
+    <%= f.password_field :password, required: true %>
+    <br>
+
+    <%= f.submit %>
+<% end %>

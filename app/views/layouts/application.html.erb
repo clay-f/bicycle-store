@@ -25,6 +25,9 @@
         </form>
       </div>
     </nav>
+    <% if notice %>
+      <p class="alert alert-danger"><%= notice %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>

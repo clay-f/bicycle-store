@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  include AuthenticateUser
+  before_action :authorized
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_product
 
@@ -77,6 +79,6 @@ class ProductsController < ApplicationController
     end
 
     def invalid_product
-      redirect_to products_url
+        redirect_to products_url
     end
 end

@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
+
+  post 'login', to: 'users#login'
+  get 'login', to: 'users#user_login'
+  get 'logout', to: 'users#logout'
+
   resources :orders
   resources :line_items
-  root to: 'store#index'
   resources :products
   resources :carts
   resources :categories
+
+  root to: 'store#index'
 end
