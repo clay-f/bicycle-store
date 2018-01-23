@@ -1,5 +1,6 @@
-<h1>Order#received</h1>
+<p>Dear <%= @order.name %></p>
+<p>thank you for you recent order from bicycle store.</p>
 
-<p>
-  <%= @greeting %>, find me in app/views/order_mailer/received.html.erb
-</p>
+<ul>
+    <%= render @order.line_items %>
+</ul>
