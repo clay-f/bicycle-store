@@ -56,7 +56,7 @@ Rails.application.configure do
     address: 'smtp.163.com',
     port: 25,
     user_name: 'liyongfeit@163.com',
-    password: 'qau28zl2c82',
+    password: Rails.application.secrets.mail_passwd,
     authentication: :plain
   }
 end
