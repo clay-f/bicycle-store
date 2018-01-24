@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   post 'login', to: 'users#login'
   get 'login', to: 'users#user_login'
   get 'logout', to: 'users#logout'

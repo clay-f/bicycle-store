@@ -1,5 +1,6 @@
 Category.destroy_all
 Product.destroy_all
+User.destroy_all
 
 Category.create(id: 1, name: '超级英雄')
 Category.create(id: 2, name: '自行车')
@@ -12,3 +13,5 @@ Product.create(name: 'Amplify 1', info: 'DC', price: 1150, category_id: 1)
 Product.create(name: 'Amplify 2', info: 'DC', price: 1150, category_id: 1)
 Product.create(name: 'ATX-20D', info: 'DC', price: 1558, category_id: 1)
 Product.create(name: 'Rocker 1', info: 'DC', price: 3598, category_id: 1)
+
+User.create(name: 'f', password: '123456')
