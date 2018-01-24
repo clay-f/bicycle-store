@@ -5,10 +5,10 @@ class UsersController < ApplicationController
   def login
     user_name = params.fetch(:user)[:name]
     passwd = params.fetch(:user)[:password]
-    user = User.find_by(name: user_name, password_digest: passwd)
-    if user
+    user = User.find_by(name: user_name)
+    if user.password == passwd
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'login succeed.'
+      redirect_to root_url, notice: 'welcome, login succeed.'
     else
       redirect_to login_url, notice: 'username or password is invalid.'
     end
@@ -18,7 +18,6 @@ class UsersController < ApplicationController
     sessino[:user_id] = nil
     redirect_to root_url
   end
-
 
   private
 
