@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   include AuthenticateUser
-  before_action :authorized, except: [:index, :show]
+  before_action :authorized, except: [:show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_product
 

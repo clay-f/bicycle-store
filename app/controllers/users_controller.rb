@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   end
 
   def logout
-    sessino[:user_id] = nil
+    session[:user_id] = nil
     redirect_to root_url
   end
 
