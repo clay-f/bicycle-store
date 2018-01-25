@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include AuthenticateUser
+  before_action :authorized, except: [:show]
   before_action :find_category, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -19,15 +21,15 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    
+
   end
 
   def edit
-    
+
   end
 
   def update
-    
+
     if @category.update(category_params)
       redirect_to category_path
     else
@@ -36,7 +38,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    
+
     @category.destroy
     redirect_to categories_path
   end
