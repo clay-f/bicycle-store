@@ -1,10 +1,13 @@
 class CategoriesController < ApplicationController
   include AuthenticateUser
-  before_action :authorized, except: [:show]
+  before_action :authorized, except: [:index]
   before_action :find_category, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = Category.all
+    if params.fetch(:category_id, false)
+    else
+      @products = Product.where(category_id: 1)
+    end
   end
 
   def new

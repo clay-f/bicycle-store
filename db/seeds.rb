@@ -14,4 +14,9 @@ Product.create(name: 'Amplify 2', info: 'DC', price: 1150, category_id: 1)
 Product.create(name: 'ATX-20D', info: 'DC', price: 1558, category_id: 1)
 Product.create(name: 'Rocker 1', info: 'DC', price: 3598, category_id: 1)
 
+Product.create(name: 'DIY短袖', info: '玩家潮品', price: 351, category_id: 5)
+Product.create(name: 'HOII遮阳伞', info: '玩家潮品', price: 1580, category_id: 5)
+Product.create(name: 'HOII伸缩帽', info: '玩家潮品', price: 968, category_id: 5)
+Product.create(name: 'HOII伸缩遮阳帽', info: '玩家潮品', price: 998, category_id: 5)
+
 User.create(name: 'f', password: '123456')

@@ -1,9 +1,5 @@
 <ul>
-	<% @categories.each do |category| %>
-		<li><%= link_to category.name, category_path(category) %></li>
-	<% end %>
+  <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+  <% end %>
 </ul>
-
-<p>
-	<%= link_to '添加分类', new_category_path %>
-</p>
