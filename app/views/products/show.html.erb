@@ -10,6 +10,8 @@
   <%= @product.info %>
 </p>
 
+<%= image_tag(@product.avatar) %>
+
 <% @product.desc_images.each do |img| %>
     <%= image_tag(img) %>
 <% end %>
