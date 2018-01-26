@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
-  attr_accessor :avatar_cache
-  mount_uploader :avatar, AvatarUploader
+  mount_uploaders :desc_images, AvatarUploader
+  serialize :desc_images, JSON # If you use SQLite, add this line.
 
   has_many :line_items
   belongs_to :category
