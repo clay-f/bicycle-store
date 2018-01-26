@@ -23,6 +23,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'sprockets-rails'
 gem 'faker', '~> 1.8', '>= 1.8.7'
 gem "mini_magick"
+gem 'pry-byebug'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -31,7 +32,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'pry-byebug'
   gem 'capistrano-rails'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

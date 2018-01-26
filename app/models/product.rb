@@ -6,6 +6,8 @@ class Product < ApplicationRecord
   belongs_to :category
   before_destroy :ensure_not_referenced_by_any_line_item
 
+  validates :avatar, allow_blank: true, format: {with: %r{\.(gif|jpg|png|jpeg)\Z}i, message: 'must be a URL for GIF, JPG or PNG image.'}
+
   private
 
   def ensure_not_referenced_by_any_line_item
