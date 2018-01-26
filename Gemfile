@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 gem 'rails', '~> 5.1.4'
 gem 'sqlite3'
 gem 'puma', '~> 3.7'
@@ -18,14 +17,12 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'activeadmin'
 gem 'cancan'
 gem 'carrierwave', '~> 1.2', '>= 1.2.2'
-
-# gem 'capistrano-rails', group: :development
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
 gem 'bootstrap', '~> 4.0.0'
 gem 'sprockets-rails'
 gem 'faker', '~> 1.8', '>= 1.8.7'
-gem 'pry-byebug'
+gem "mini_magick"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -34,6 +31,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry-byebug'
+  gem 'capistrano-rails'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'

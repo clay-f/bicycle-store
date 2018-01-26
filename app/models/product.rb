@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  attr_accessor :avatar_cache
   mount_uploader :avatar, AvatarUploader
 
   has_many :line_items
