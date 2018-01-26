@@ -15,3 +15,9 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+(function() {
+    $("a#bicycle").on("hover", "nav div a#bicycle", function() {
+        $("sesion#categories_list").css("display", "block");
+    });    
+})();

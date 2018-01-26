@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'activeadmin'
 gem 'cancan'
+gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 
 # gem 'capistrano-rails', group: :development
 gem 'jquery-rails'
