@@ -4,9 +4,11 @@ class CategoriesController < ApplicationController
   before_action :find_category, only: [:show, :edit, :update, :destroy]
 
   def index
+    @categories = Category.all
     if params.fetch(:category_id, false)
+      @products = Product.where(category_id: params[:category_id])
     else
-      @products = Product.where(category_id: 1)
+      @products = Product.where(category_id: 1).limit(4)
     end
   end
 
