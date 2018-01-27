@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
     if params.fetch(:category_id, false)
       @products = Product.where(category_id: params[:category_id])
     else
+      @category_img = "e.jpg"
       @products = Product.where(category_id: 1).limit(4)
     end
   end

@@ -7,11 +7,16 @@
   <div class="row justify-content-md-center">
     <% @categories.each do |category| %>
       <div class="col-1">
-        <%= link_to category.name, categories_path(category_id: category.id) %>
+        <% if category.id == params[:category_id].to_i %>
+            <%= link_to category.name, categories_path(category_id: category.id), id: "categories_prompt_messages" %>
+        <% else %>
+            <%= link_to category.name, categories_path(category_id: category.id) %>
+        <% end %>
       </div>
     <% end %>
   </div>
   <hr>
+  <br>
   <div class="row">
     <% @products.each do |product| %>
       <div class="col">
@@ -27,4 +32,5 @@
     <% end %>
   </ul>
 </div>
+<br>
 </section>
