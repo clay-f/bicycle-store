@@ -1,26 +1,18 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-<p>
-  <strong>Info:</strong>
-  <%= @product.info %>
-</p>
-<% unless @product.avatar.nil? %>
-  <%= image_tag(@product.avatar) %>
-<% end %>
-<% @product.desc_images.each do |img| %>
-  <%= image_tag(img) %>
-<% end %>
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-<p>
-  <strong>Category:</strong>
-  <%= @product.category.name %>
-</p>
-<%= link_to '编辑', edit_product_path(@product) %> |
-<%= link_to '返回', products_path %>
-<%= button_to '添加到购物车', line_items_path(product_id: @product)  %>
+<main>
+  <div class="text-center">
+    <h3><%= @product.name %></h3>
+    <%= image_tag @product.avatar, class: "img-fuild rounded" %>
+    <br>
+    <br>
+    <% @product.desc_images.each do |img| %>
+      <%= image_tag img.url, class: "rounded" %>
+      <br>
+      <br>
+    <% end %>
+  </div>
+</main>
+<section class="text-center">
+  <%= link_to '编辑', edit_product_path(@product) %> |
+  <%= link_to '返回', products_path %>
+  <%= button_to '添加到购物车', line_items_path(product_id: @product)  %>
+</section>
