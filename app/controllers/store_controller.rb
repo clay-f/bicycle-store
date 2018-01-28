@@ -4,7 +4,8 @@ class StoreController < ApplicationController
   
   def index
     @carousel_products = Product.order("random()").limit(5)
-    @products = Product.all
+    @products = Product.order("random()").limit(3)
     @categories = Category.all
+    @new_products = Product.order(:created_at).limit(8)
   end
 end

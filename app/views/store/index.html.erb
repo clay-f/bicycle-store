@@ -39,38 +39,28 @@
 
 <section>
 	<div class="text-center">
-		<h3>DCW</h3>
-		<p class="text-muted">客制化单车</p>
+		<h3>自行车</h3>
 		<hr>
+		<br>
 	</div>
 	<div class="row">
-		<div class="col col-sm-6 col-md-6"><a href="#"><%= image_tag 'super_hero.jpg' %></a></div>
-		<div class="col col-sm-6 col-md-6"><a href="#"><%= image_tag 'a.png' %></a></div>
-
-		<div class="col"><a href="#"><%= image_tag 'b.png' %></a></div>
-		<div class="col"><a href="#"><%= image_tag 'c.png' %></a></div>
-		<div class="col"><a href="#"><%= image_tag 'd.png' %></a></div>
+		<div class="col"><%= link_to image_tag('super_hero.jpg', size: '300x300'), categories_path %></div>
+		<% @products.each do |product| %>
+			<div class="col"><%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %></div>
+		<% end %>
 	</div>
 	<br>
 </section>
 
 <section>
 	<div class="text-center">
-		<h3>DCW</h3>
-		<p class="text-muted">新品上市</p>
+		<h3>新品上市</h3>
 		<hr>
+		<br>
 	</div>
 	<div class="row">
-		<div class="col-md-6"><a href="#"><%= image_tag 'super_hero.jpg' %></a></div>
-		<div class="col"><a href="#"><%= image_tag 'a.png' %></a></div>
-		<div class="w-100"></div>
-		<div class="col"><a href="#"><%= image_tag 'b.png' %></a> </div>
-		<div class="col"><a href="#"><%= image_tag 'c.png' %></a></div>
-		<div class="col"><a href="#"><%= image_tag 'd.png' %></a></div>
+		<% @new_products.each do |product| %>
+			<div class="col"><%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %></div>
+		<% end %>
 	</div>
 </section>
-
-
-<br>
-<br>
-<br>
