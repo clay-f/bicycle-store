@@ -3,10 +3,13 @@ class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   def show
+    unless @cart.identify_id == session.id
+      redirect_to root_url
+    end
   end
 
   def create
-    @cart = Cart.new(cart_params)
+    @cart = Cart.new(cart_params, identify_id: session.id)
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was created' }
