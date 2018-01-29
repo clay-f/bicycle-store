@@ -13,6 +13,16 @@
       </div>
     </div>
   </div>
+  <br>
+  <article class="text-center">
+    <% if @product.desc_images.present? %>
+      <% @product.desc_images.each do |img| %>
+        <%= image_tag img.url, class: "img-fuild rounded", size: '' %>
+        <br>
+        <br>
+      <% end %>
+    <% end %>
+  </article>
 </main>
 <br>
 <section class="text-center">
