@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'users#login'
   get 'login', to: 'users#user_login'
   get 'logout', to: 'users#logout'
+  get 'activity', to: 'store#activity'
 
   resources :orders
   resources :line_items

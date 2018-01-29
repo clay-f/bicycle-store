@@ -1,6 +1,9 @@
 class StoreController < ApplicationController
   include CurrentCart
   before_action :set_cart
+
+  def activity
+  end
   
   def index
     @carousel_products = Product.order("random()").limit(5)
