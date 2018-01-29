@@ -12,7 +12,9 @@
   </div>
 </main>
 <section class="text-center">
-  <%= link_to '编辑', edit_product_path(@product) %> |
-  <%= link_to '返回', products_path %>
+  <% if user_login? %>
+    <%= link_to '编辑', edit_product_path(@product) %> |
+    <%= link_to '返回', products_path %>
+  <% end %>
   <%= button_to '添加到购物车', line_items_path(product_id: @product)  %>
 </section>
