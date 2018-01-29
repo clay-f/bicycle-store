@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :order_name %>
+    <%= form.text_field :name, id: :order_name, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :address %>
-    <%= form.text_area :address, id: :order_address %>
+    <%= form.text_area :address, id: :order_address, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :email %>
-    <%= form.text_field :email, id: :order_email %>
+    <%= form.text_field :email, id: :order_email, class: "form-control", required: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :pay_type %>
     <%= form.select :pay_type, Order.pay_types.keys, prompt: 'Select a payment method' %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Place Order' %>
+    <%= form.submit '结账' %>
   </div>
 <% end %>
