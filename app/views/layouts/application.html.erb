@@ -25,6 +25,17 @@
         </ul>
       </div>
     </nav>
+    <section id="products_categories">
+      <ul>
+        <% @products_categories.each do |category| %>
+          <li>
+            <a href="/categories?category_id=<%= category.id %>">
+              <p><%= category.name %></p>  
+            </a>
+          </li>
+      <% end %>
+      </ul>
+    </section>
     <% if notice %>
       <p class="alert alert-danger"><%= notice %></p>
     <% end %>
