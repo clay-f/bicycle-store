@@ -2,7 +2,7 @@ Category.destroy_all
 Product.destroy_all
 User.destroy_all
 
-Category.create(id: 1, name: '超级英雄', avatar: 'super_hero.jpg')
+Category.create(id: 1, name: '超级英雄', avatar: 'super_hero.png')
 Category.create(id: 2, name: '自行车', avatar: 'bicycle.png')
 Category.create(id: 3, name: '婴儿车', avatar: 'ying_er_che.png')
 Category.create(id: 4, name: '潮流装备', avatar: 'hat.png')

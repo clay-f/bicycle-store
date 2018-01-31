@@ -25,9 +25,10 @@
         </ul>
       </div>
     </nav>
-    <section id="products_categories">
+    <section id="products_categories" style="display: none;">
+      <hr>
       <div>
-         <ul>
+         <ul class="text-center">
           <% @products_categories.each do |category| %>
             <li>
               <a href="/categories?category_id=<%= category.id %>">

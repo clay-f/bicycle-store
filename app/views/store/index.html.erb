@@ -44,7 +44,7 @@
 		<br>
 	</div>
 	<div class="row">
-		<div class="col-3"><%= link_to image_tag('super_hero.jpg', size: '300x300'), categories_path %></div>
+		<div class="col-3"><%= link_to image_tag('zheng_yi_bicycle.jpg', size: '300x300'), categories_path %></div>
 		<% @products.each do |product| %>
 			<div class="col-3"><%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %></div>
 		<% end %>
