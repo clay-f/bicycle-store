@@ -13,11 +13,8 @@
 //= require jquery3
 //= require popper
 //= require store
+//= require categories
 //= require store_helper
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
-
-{
-    
-}
