@@ -13,7 +13,12 @@ footer {
 }
 
 section#products_categories {
-    overflow: hidden;
+    div {
+        overflow: hidden;
+        background-color: white;
+        box-shadow: 3px 3px #EBEBEB;
+        width: 100%;
+    }
     ul {
 
     }

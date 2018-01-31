@@ -26,15 +26,18 @@
       </div>
     </nav>
     <section id="products_categories">
-      <ul>
-        <% @products_categories.each do |category| %>
-          <li>
-            <a href="/categories?category_id=<%= category.id %>">
-              <p><%= category.name %></p>  
-            </a>
-          </li>
-      <% end %>
-      </ul>
+      <div>
+         <ul>
+          <% @products_categories.each do |category| %>
+            <li>
+              <a href="/categories?category_id=<%= category.id %>">
+                <%= image_tag category.avatar %>
+                <p><%= category.name %></p>  
+              </a>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </section>
     <% if notice %>
       <p class="alert alert-danger"><%= notice %></p>
