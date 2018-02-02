@@ -6,9 +6,10 @@ class CategoriesController < ApplicationController
   def index
     @categories = Category.all
     if params.fetch(:category_id, false)
+      @category_img = "category_#{params[:category_id]}.jpg"
       @products = Product.where(category_id: params[:category_id])
     else
-      @category_img = "e.jpg"
+      @category_img = "category_1.jpg"
       @products = Product.where(category_id: 1).limit(4)
     end
   end
