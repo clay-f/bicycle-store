@@ -9,7 +9,7 @@ class CartsController < ApplicationController
   end
 
   def create
-    @cart = Cart.new(cart_params, identify_id: session.id)
+    @cart = Cart.new(cart_params)
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was created' }
@@ -33,7 +33,7 @@ class CartsController < ApplicationController
   private
 
   def cart_params
-    params.fetch(:cart, {})
+    params.require(:cart).permit(:identify_id)
   end
 
   def set_cart

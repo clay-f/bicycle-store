@@ -5,15 +5,18 @@ one:
   info: MyString
   price: 9.99
   category: one
+  avatar: a.png
 
 two:
   name: two
   info: MyString
   price: 9.99
   category: two
+  avatar: a.png
 
 foo:
   name: foo
   info: foo
   price: 9.99
   category: two
+  avatar: a.png
