@@ -1,70 +1,73 @@
 <section>
-	<div id="carouse-products" class="carousel slide" data-ride="carousel">
-	  <ol class="carousel-indicators">
-	    <% @carousel_products.each do |product| %>
-	      <% if @carousel_products.first.id == product.id %>
-	        <li data-target="#carouse-products" data-slide-to="<%= product.id %>" class="active"></li>
-	      <% else %>
-	        <li data-target="#carouse-products" data-slide-to="<%= product.id %>"></li>
-	      <% end %>
-	    <% end %>
-	  </ol>
-	  <div class="carousel-inner">
-	    <% @carousel_products.each do |product| %>
-	      <% if @carousel_products.first.id == product.id %>
-	          <div class="carousel-item active">
-	        <% else %>
-	          <div class="carousel-item">
-	        <% end %>
-	        <% unless product.avatar.nil? %>
-		    	<%= image_tag product.avatar, class: "d-block w-100", size: "500" %>        	
-	        <% end %>
-	        	<div class="carousel-caption d-none d-md-block">
-	        		<h5><%= product.name %></h5>
-	        	</div>
-	        </div>
-	      <% end %>
-	    </div>
-	    <a href="#carouse-products" class="carousel-control-prev" role="button" data-slide="prev">
-	    	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    	<span class="sr-only">Previous</span>
-	    </a>
-	    <a class="carousel-control-next" href="#carouse-products" role="button" data-slide="next">
-	    	<span class="carousel-control-next-icon" aria-hidden="true"></span>
-	   		<span class="sr-only">Next</span>
-	    </a>
+  <div id="carouse-products" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li id="carouse-products" data-slide-to="0" class="active"></li>
+      <li id="carouse-products" data-slide-to="1"></li>
+      <li id="carouse-products" data-slide-to="2"></li>
+      <li id="carouse-products" data-slide-to="3"></li>
+      <li id="carouse-products" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= image_tag 'rotate1.jpg', class: 'd-block w-100' %>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag 'rotate2.png', class: 'd-block w-100' %>
+      </div>
+      <div class="carousel-item">
+      	<%= image_tag 'rotate3.jpg', class: 'd-block w-100' %>
+      </div>
+      <div class="carousel-item">
+      	<%= image_tag 'rotate4.jpg', class: 'd-block w-100' %>
+      </div>
+      <div class="carousel-item">
+      	<%= image_tag 'rotate5.jpg', class: 'd-block w-100' %>
+      </div>
+    </div>
+    <a href="#carouse-products" class="carousel-control-prev" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouse-products" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
   </div>
   <br>
   <br>
 </section>
-
 <section id="bicycles">
-	<div class="text-center">
-		<h3>自行车</h3>
-		<p class="text-muted">自定义单车</p>
-		<hr>
-		<br>
-	</div>
-	<div class="row">
-		<div class="col-3"><%= link_to image_tag('zheng_yi_bicycle.jpg', size: '300x300'), categories_path %></div>
-		<% @products.each do |product| %>
-			<div class="col-3"><%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %></div>
-		<% end %>
-	</div>
-	<br>
-	<br>
+  <div class="text-center">
+    <h3>自行车</h3>
+    <p class="text-muted">自定义单车</p>
+    <hr>
+    <br>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <%= link_to image_tag('zheng_yi_bicycle.jpg', size: '300x300'), categories_path %>
+    </div>
+    <% @products.each do |product| %>
+      <div class="col-3">
+        <%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %>
+      </div>
+    <% end %>
+  </div>
+  <br>
+  <br>
 </section>
-
 <section id="new_products">
-	<div class="text-center">
-		<h3>新品上市</h3>
-		<p class="text-muted">玩家潮品</p>
-		<hr>
-		<br>
-	</div>
-	<div class="row">
-		<% @new_products.each do |product| %>
-			<div class="col col-3"><%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %></div>
-		<% end %>
-	</div>
+  <div class="text-center">
+    <h3>新品上市</h3>
+    <p class="text-muted">玩家潮品</p>
+    <hr>
+    <br>
+  </div>
+  <div class="row">
+    <% @new_products.each do |product| %>
+      <div class="col col-3">
+        <%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %>
+      </div>
+    <% end %>
+  </div>
 </section>

@@ -15,7 +15,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class='nav-item' id="nav_categories"> <%= link_to '分类', categories_path(category_id: 1),  class: 'nav-link'%></li>
-          <li class='nav-item'><%= link_to '单车', categories_path(category_id: 1), class: 'nav-link', id: 'bicycle' %></li>
+          <li class='nav-item' id="nav_danche"><%= link_to '单车', categories_path(category_id: 1), class: 'nav-link', id: 'bicycle' %></li>
           <li class='nav-item'> <%= link_to '婴儿车', categories_path(category_id: 3),  class: 'nav-link'%></li>
           <li class='nav-item'> <%= link_to '活动单车', activity_path, class: 'nav-link'%></li>
           <% if user_login? %>
@@ -26,7 +26,6 @@
       </div>
     </nav>
     <section id="products_categories" style="display: none;">
-      <hr>
       <div>
          <ul class="text-center">
           <% @products_categories.each do |category| %>
@@ -55,7 +54,11 @@
       <div class="row">
         <div class="col-4">1 of 3</div>
         <div class="col-4"><p class="text-center">在线客服 / 我的订单 / 使用条款 / 说明书下载</p></div>
-        <div class="col-4">1 of 3</div>
+        <div class="col-4">
+          Tel 86-21-6233222
+          <br>
+          ADD 上海武汉湖北大桥小巧
+        </div>
       </div>
       <br>
       <br>
@@ -63,11 +66,19 @@
     <script type="text/javascript">
       {
         $('nav div ul li:eq(0)').mouseover((event) => {
-          $('section#products_categories').animate({height: "show", width: 'show', opacity: 'show'}, 400);
+          $('section#products_categories').toggle().css({"position": "absolute", "z-index": 2, "width": "100%"});
         });
 
         $('section#products_categories').on('mouseleave', (event) => {
-          $(event.currentTarget).toggle(400);
+          $(event.currentTarget).toggle();
+        });
+
+        $('nav div ul li:eq(1)').on('mouseover', () => {
+          $('section#products_categories').css({"display": "none"});
+        });
+
+        $('nav > a').on('mouseover', () => {
+          $('section#products_categories').css({"display": "none"});
         });
       }
     </script>
