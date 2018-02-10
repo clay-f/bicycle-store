@@ -11,9 +11,16 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
   private
 
-    def get_products_categories
-      @products_categories = Category.all
+  def get_products_categories
+    @products_categories = Category.all
+  end
+
+  def authenticate_admin_user!
+    unless session[:user_id]
+      redirect_to root_url
     end
+  end
 end
