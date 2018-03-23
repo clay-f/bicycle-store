@@ -1,9 +1,14 @@
+<article class="text-center">
   <div class="row">
     <div class="col">
       <div class="product_img">
-        <%= image_tag @product.avatar, class: "img-fuild rounded" %>
+        <figure class="figure">
+          <%= image_tag @product.avatar, class: "figure-img img-fluid rounded", size: '' %>
+          <figcaption class="figure-caption">A caption for the above image.</figcaption>
+        </figure>
       </div>
     </div>
+    <div class="w"></div>
     <div class="col">
       <div class="product_info">
         <h3> <%= @product.name %> </h3>
@@ -14,16 +19,14 @@
     </div>
   </div>
   <br>
-  <article class="text-center">
-    <% if @product.desc_images.present? %>
-      <% @product.desc_images.each do |img| %>
-        <%= image_tag img.url, class: "img-fuild rounded", size: '' %>
-        <br>
-        <br>
-      <% end %>
+  <% if @product.desc_images.present? %>
+    <% @product.desc_images.each do |img| %>
+      <%= image_tag img.url, class: "img-fuild rounded", size: '' %>
+      <br>
+      <br>
     <% end %>
-  </article>
-</main>
+  <% end %>
+</article>
 <br>
 <section class="text-center">
   <% if user_login? %>
