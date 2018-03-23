@@ -6,6 +6,7 @@
     <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,6 +47,9 @@
     <div class="container-fluid">
       <br>
       <%= yield %>
+      <br>
+      <br>
+      <br>
       <br>
       <br>
       <br>
