@@ -1,5 +1,7 @@
 class CartsController < ApplicationController
+  include CurrentCart
   before_action :set_cart, only: [:show, :destroy]
+  before_action :authenticate_cart_expire_time
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   def show
