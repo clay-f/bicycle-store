@@ -1,7 +1,18 @@
-threads 8, 32
+workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+threads_count = Integer(ENV['MAX_THREADS'] || 1)
+threads threads_count, 16
 
-port 3000
+preload_app!
 
-environment ENV.fetch("RAILS_ENV") { "development" }
+rackup DefaultRackup
+port ENV['PORT'] || 3000
+environment ENV['RACK_ENV'] || 'development'
 
-plugin :tmp_restart
+before_fork do
+  puts "puma master process about to fork. closoing existing activerecord connections."
+  ActiveRecord::Base.connection.disconnect!
+end
+
+on_worker_boot do
+  ActiveRecord::Base.establish_connection
+end

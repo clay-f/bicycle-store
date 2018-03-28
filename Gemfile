@@ -20,9 +20,9 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.12.9'
 gem 'bootstrap', '~> 4.0.0'
 gem 'sprockets-rails'
-gem 'faker', '~> 1.8', '>= 1.8.7'
 gem "mini_magick"
 gem 'pry-byebug'
+gem 'sidekiq'
 
 group :production do
   gem 'pg'
@@ -36,6 +36,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'faker', '~> 1.8', '>= 1.8.7'
   gem 'capistrano-rails'
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
