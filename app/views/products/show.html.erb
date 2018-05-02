@@ -1,9 +1,9 @@
-<article class="text-center">
+<article id="product_detail">
   <div class="row">
     <div class="col">
       <div class="product_img">
         <figure class="figure">
-          <%= image_tag @product.avatar, class: "figure-img img-fluid rounded", size: '' %>
+          <%= image_tag @product.avatar, class: "figure-img img-fluid rounded" %>
           <figcaption class="figure-caption">A caption for the above image.</figcaption>
         </figure>
       </div>
@@ -15,7 +15,9 @@
         <p><%= time_ago_in_words(@product.created_at) %></p>
         <p>详细信息: <%= @product.info %></p>
         <p>价格: <%= number_to_currency(@product.price) %></p>
+        <p>促销价: <%= number_to_currency(@product.discount_price) %></p>
       </div>
+      <%= button_to '添加到购物车', line_items_path(product_id: @product), class: 'btn btn-primary'  %>
     </div>
   </div>
   <br>
@@ -33,5 +35,4 @@
     <%= link_to '编辑', edit_product_path(@product) %> |
     <%= link_to '返回', products_path %>
   <% end %>
-  <%= button_to '添加到购物车', line_items_path(product_id: @product), class: 'btn btn-primary'  %>
 </section>

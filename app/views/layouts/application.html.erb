@@ -30,12 +30,12 @@
     </nav>
     <section id="products_categories" style="display: none;">
       <div>
-         <ul class="text-center">
+        <ul class="text-center">
           <% @products_categories.each do |category| %>
             <li>
               <a href="/categories?category_id=<%= category.id %>">
                 <%= image_tag category.avatar %>
-                <p><%= category.name %></p>  
+                <p><%= category.name %></p>
               </a>
             </li>
           <% end %>
@@ -45,21 +45,19 @@
     <% if notice %>
       <p class="alert alert-danger"><%= notice %></p>
     <% end %>
-    <div class="container-fluid">
+    <section>
       <br>
-      <%= yield %>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+    </section>
     <footer>
       <br>
       <div class="row">
         <div class="col-4">1 of 3</div>
-        <div class="col-4"><p class="text-center">在线客服 / 我的订单 / 使用条款 / 说明书下载</p></div>
+        <div class="col-4">
+          <p class="text-center">在线客服 / 我的订单 / 使用条款 / 说明书下载</p>
+        </div>
         <div class="col-4">
           Tel 86-21-6233222
         </div>
@@ -72,15 +70,15 @@
         $('nav div ul li:eq(0)').mouseover((event) => {
           $('section#products_categories').toggle().css({"position": "absolute", "z-index": 2, "width": "100%"});
         });
-
+      
         $('section#products_categories').on('mouseleave', (event) => {
           $(event.currentTarget).toggle();
         });
-
+      
         $('nav div ul li:eq(1)').on('mouseover', () => {
           $('section#products_categories').css({"display": "none"});
         });
-
+      
         $('nav > a').on('mouseover', () => {
           $('section#products_categories').css({"display": "none"});
         });
