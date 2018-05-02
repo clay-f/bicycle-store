@@ -1,6 +1,6 @@
 <article id="product_detail">
   <div class="row">
-    <div class="col">
+    <div class="col offset-1">
       <div class="product_img">
         <figure class="figure">
           <%= image_tag @product.avatar, class: "figure-img img-fluid rounded" %>
@@ -12,8 +12,10 @@
     <div class="col">
       <div class="product_info">
         <h3> <%= @product.name %> </h3>
-        <p><%= time_ago_in_words(@product.created_at) %></p>
+        <br>
+        <p>创建时间: <%= time_ago_in_words(@product.created_at) %></p>
         <p>详细信息: <%= @product.info %></p>
+        <p>类型: <%= @product.category.name %></p>
         <p>价格: <%= number_to_currency(@product.price) %></p>
         <p>促销价: <%= number_to_currency(@product.discount_price) %></p>
       </div>

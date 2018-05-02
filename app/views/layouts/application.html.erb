@@ -45,14 +45,12 @@
     <% if notice %>
       <p class="alert alert-danger"><%= notice %></p>
     <% end %>
-    <section>
+    <br>
+    <div class="container-fluid">
+      <%= yield %>
       <br>
-      <div class="container-fluid">
-        <%= yield %>
-        <br>
-        <br>
-      </div>
-    </section>
+      <br>
+    </div>
     <footer>
       <br>
       <div class="row">
