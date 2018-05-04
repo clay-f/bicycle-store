@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   def login
     user_name = params.fetch(:user)[:name]
     passwd = params.fetch(:user)[:password]
-    user = User.find_by(name: user_name)
-    if user.password == passwd
+    user ||= User.find_by(name: user_name) || false
+    if user && user.password == passwd
       session[:user_id] = user.id
       redirect_to root_url, notice: 'welcome, login succeed.'
     else
