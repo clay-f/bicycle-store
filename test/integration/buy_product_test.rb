@@ -7,8 +7,7 @@ class BuyProductTest < ActionDispatch::IntegrationTest
     origin_product_count = Order.count
     tmp_product = products(:foo)
 
-    get "/"
-    assert_response :success
+    visit("/")
 
     post '/line_items', params: {product_id: tmp_product.id}, xhr: true
     assert_response :success

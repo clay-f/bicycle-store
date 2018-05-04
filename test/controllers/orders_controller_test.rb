@@ -20,7 +20,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     post line_items_url, params: { product_id: products(:foo).id }
 
     get new_order_url
-    assert_response :redirect
+    assert_response :success
   end
 
   test "should show order" do

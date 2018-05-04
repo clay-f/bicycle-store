@@ -28,7 +28,7 @@ end
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
   gem 'pry-byebug'
   gem 'minitest'
   gem 'factory_bot_rails'
