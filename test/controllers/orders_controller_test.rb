@@ -20,15 +20,7 @@ class OrdersControllerTest < ActionDispatch::IntegrationTest
     post line_items_url, params: { product_id: products(:foo).id }
 
     get new_order_url
-    assert_response :success
-  end
-
-  test "should create order" do
-    assert_difference('Order.count') do
-      post orders_url, params: { order: { address: @order.address, email: @order.email, name: @order.name, pay_type: @order.pay_type } }
-    end
-
-    assert_redirected_to root_path
+    assert_response :redirect
   end
 
   test "should show order" do
