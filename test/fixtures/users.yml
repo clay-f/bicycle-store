@@ -7,3 +7,7 @@ one:
 two:
   name: MyString
   password_digest: <%= BCrypt::Password.create('secret') %>
+
+three:
+  name: foo
+  password_digest: "123456"
