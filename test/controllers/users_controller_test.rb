@@ -8,5 +8,6 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should login" do
     post login_path, params: {user: {name: "foo", password: "123456"}}
+    assert_response :redirect
   end
 end
