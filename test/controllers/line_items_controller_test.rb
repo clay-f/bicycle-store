@@ -14,30 +14,4 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     get new_line_item_url
     assert_response :success
   end
-
-  test "should create line_item" do
-    assert_difference('LineItem.count') do
-      post line_items_url, params: { product_id: products(:foo).id }
-    end
-    follow_redirect!
-  end
-
-  test "should get edit" do
-    get edit_line_item_url(@line_item)
-    assert_response :success
-  end
-
-  test "should update line_item" do
-    patch line_item_url(@line_item), params: { line_item: { product_id: @line_item.product_id } }
-    assert_redirected_to line_item_url(@line_item)
-  end
-
-  test "should destroy line_item" do
-    assert_difference('LineItem.count', -1) do
-      delete line_item_url(@line_item)
-    end
-
-    assert_redirected_to line_items_url
-  end
-
 end
