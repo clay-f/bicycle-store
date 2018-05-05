@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_secure_password
 
   def password
-    @password ||= Password.create(password_digest)
+    @password ||= Password.new(password_digest)
   end
 
   def password=(new_password)
