@@ -15,7 +15,7 @@ class VendorChangeProductTest < ActionDispatch::IntegrationTest
       find_link('Show')
       click_on('Show')
     end
-    page.status_code == '200'
+    assert page.status_code == 200
     page.has_content?('iFun516')
     page.has_content?('$910.00')
     click_on('编辑')
