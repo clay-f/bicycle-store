@@ -20,6 +20,10 @@
         <p>促销价: <%= number_to_currency(@product.discount_price) %></p>
       </div>
       <%= button_to '添加到购物车', line_items_path(product_id: @product), class: 'btn btn-primary'  %>
+      <br>
+      <p class="text-muted">
+        服务承诺 正品保证 极速退款 七天无理由退换
+      </p>
     </div>
   </div>
   <br>
@@ -37,4 +41,17 @@
     <%= link_to '编辑', edit_product_path(@product) %> |
     <%= link_to '返回', products_path %>
   <% end %>
+</section>
+<hr>
+<section id="guess_customer_like">
+  <p>猜猜你喜欢</p>
+  <div class="suggest_products row clearfix">
+    <% @guess_products.each do |product| %>
+      <div class="guess_product_info col-2">
+        <%= link_to image_tag(product.avatar, size: '170x100') %>
+        <em class="show_price_layer"></em>
+        <span>$<%= product.price %></span>
+      </div>
+    <% end %>
+  </div>
 </section>

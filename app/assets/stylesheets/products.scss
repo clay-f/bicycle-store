@@ -1,6 +1,24 @@
-article#product_detail {
-    div.row {
-        div.product_info {
+section#guess_customer_like {
+    p {
+        text-align: center;
+    }
+    div.suggest_products {
+        div.guess_product_info {
+            color: red;
+            em.show_price_layer {
+                position: absolute;
+                background-color: #fff;
+                bottom: 0;
+                left: 0;
+                height: 30px;
+                width: 100%;
+                opacity: .7;
+            }
+            span {
+                position: absolute;
+                bottom: 5px;
+                left: 70px;
+            }
         }
     }
 }

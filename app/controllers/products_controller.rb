@@ -13,6 +13,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @guess_products = Product.order(Arel.sql('random()')).limit(6)
   end
 
   # GET /products/new
