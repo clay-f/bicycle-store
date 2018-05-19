@@ -4,9 +4,10 @@ $(function() {
 
 function clickNavigatorArrowRotateSuggestionList() {
     var navigagor_item = ["left_arrow", "right_arrow"];
+    var curl_hostname = (location.hostname == "localhost" ? "http://localhost:3000" : "https://morning-castle-25459.herokuapp.com");
     for (let i = 0; i <= navigagor_item.length - 1; i++) {
         $(`div#${navigagor_item[i]}`).on("click", () => {
-                fetch("http://localhost:3000/products/suggestion_product")
+                fetch(`${curl_hostname}/products/suggestion_product`)
                 .then(response => 
                     response.json().then(body => ({data: body, status: response.status})))
                 .then(data => {
