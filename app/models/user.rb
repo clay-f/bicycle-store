@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   include BCrypt
-
   has_secure_password
 
   def password

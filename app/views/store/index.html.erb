@@ -49,7 +49,7 @@
     </div>
     <% @products.each do |product| %>
       <div class="col-3">
-        <%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %>
+        <%= link_to image_tag(product.avatar, size: '300x300', class: "img-thumbnail"), product_path(product) %>
       </div>
     <% end %>
   </div>
@@ -66,7 +66,7 @@
   <div class="row">
     <% @new_products.each do |product| %>
       <div class="col col-3">
-        <%= link_to image_tag(product.avatar, size: '300x300'), product_path(product) %>
+        <%= link_to image_tag(product.avatar, size: '300x300', class: "img-thumbnail"), product_path(product) %>
       </div>
     <% end %>
   </div>

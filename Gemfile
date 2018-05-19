@@ -20,6 +20,7 @@ gem 'jquery-rails'
 gem 'sprockets-rails'
 gem "mini_magick"
 gem 'sidekiq'
+gem 'bootsnap', require: false
 
 group :production do
   gem 'pg'
