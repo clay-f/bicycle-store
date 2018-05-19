@@ -8,7 +8,11 @@ Rails.application.routes.draw do
 
   resources :orders
   resources :line_items
-  resources :products
+  resources :products do
+    collection do
+      get :suggestion_product
+    end      
+  end
   resources :carts, only: [:create, :show, :destroy]
   resources :categories
 
