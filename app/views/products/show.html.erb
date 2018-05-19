@@ -48,9 +48,12 @@
   <div class="suggest_products row clearfix">
     <% @guess_products.each do |product| %>
       <div class="guess_product_info col-2">
-        <%= link_to image_tag(product.avatar, size: '170x100', class: "img-fluid img-thumbnail") %>
-        <em class="show_price_layer"></em>
-        <span>$<%= product.price %></span>
+        <figure class="figure">
+          <%= link_to image_tag(product.avatar, size: '170x100', class: "img-fluid img-thumbnail") %>
+          <figcaption>
+            <span>$<%= product.price %></span>                        
+          </figcaption>          
+        </figure>
       </div>
     <% end %>
     <div id="navigator_arrow">
