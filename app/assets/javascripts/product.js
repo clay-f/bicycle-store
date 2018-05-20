@@ -1,4 +1,4 @@
-$(function() {
+document.addEventListener("turbolinks:load", function() {
     clickNavigatorArrowRotateSuggestionList();
 });
 
@@ -18,7 +18,7 @@ function clickNavigatorArrowRotateSuggestionList() {
 }
 
 function generatorSuggestionListAppendToHtml(data, arrow_direct) {
-    var animated_val = arrow_direct == "left_arrow" ? "fadeInLeft" : "fadeInRight";
+    var animated_val = arrow_direct == "left_arrow" ? "fadeInRight" : "fadeInLeft";
     var suggestion_list =
         data.map((item) => {
             var html_val =

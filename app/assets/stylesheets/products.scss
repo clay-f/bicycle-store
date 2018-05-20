@@ -1,3 +1,15 @@
+article#product_detail {
+    figure {
+        img {
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+        }
+
+        img:hover {
+            box-shadow: 1px 2px 3px grey;
+        }
+    }
+}
+
 section#guess_customer_like {
     p {
         text-align: center;
@@ -7,16 +19,16 @@ section#guess_customer_like {
         div.guess_product_info {
             span {
                 position: absolute;
-                bottom: 5px;
+                bottom: 30px;
                 left: 73px;
             }
 
             figure {
-                border-radius: 9px;
+                border-radius: 6px;
             }
             
             figure:hover {
-                box-shadow: 0 0 70px grey;
+                box-shadow: 3px 5px 10px grey;
             }
         }
 
