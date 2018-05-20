@@ -20,7 +20,7 @@
   <div class="row">
     <% @products.each do |product| %>
       <div class="col">
-        <div class="card">
+        <div class="card" id="category_product">
           <%= link_to image_tag(product.avatar, class: "card-img-top"), product_path(product) %>
           <div class="card-body text-center">
             <h5 class="card-title"> <%= link_to product.name, product_path(product) %> </h5>

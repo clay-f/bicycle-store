@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     user ||= User.find_by(name: user_name) || false
     if user && user.password == passwd
       session[:user_id] = user.id
-      redirect_to root_url, notice: 'welcome, login succeed.'
+      redirect_to root_url, notice: 'welcome, login success'
     else
       redirect_to login_url, notice: 'username or password is invalid.'
     end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 
   def logout
     session[:user_id] = nil
-    redirect_to root_url
+    redirect_to root_url, notice: 'logout'
   end
 
   private

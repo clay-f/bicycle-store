@@ -17,3 +17,15 @@
 //= require store_helper
 //= require turbolinks
 //= require_tree .
+
+function addLoadEvent(func) {
+    oldload = window.onload;
+    if (typeof oldload != 'function') {
+        window.onload = oldload;
+    } else {
+        window.onload = function() {
+            oldload();
+            func();
+        }
+    }
+}
