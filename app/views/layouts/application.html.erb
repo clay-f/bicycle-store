@@ -1,98 +1,123 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>DancheW</title>
     <%= csrf_meta_tags %>
-    <%= favicon_link_tag 'favicon.ico' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  </head>
-  <body>
+        <%= favicon_link_tag 'favicon.ico' %>
+            <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+                <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+                    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+                    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+
+<body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <%= link_to 'Navbar', root_path, class: 'navbar-brand' %>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class='nav-item' id="nav_categories"> <%= link_to '分类', categories_path(category_id: 1),  class: 'nav-link'%></li>
-          <li class='nav-item' id="nav_danche"><%= link_to '单车', categories_path(category_id: 1), class: 'nav-link', id: 'bicycle' %></li>
-          <li class='nav-item'> <%= link_to '婴儿车', categories_path(category_id: 3),  class: 'nav-link'%></li>
-          <li class='nav-item'> <%= link_to '活动单车', activity_path, class: 'nav-link'%></li>
-          <% if user_login? %>
-            <li class="nav-ite"> <%= link_to 'Logout', logout_path, class: "nav-link" %> </li>
-            <li id="nav-item"><%= link_to '后台管理', admin_root_path, class: 'nav-link' %></li>
-          <% end %>
-        </ul>
-      </div>
+        <%= link_to 'Navbar', root_path, class: 'navbar-brand' %>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class='nav-item' id="nav_categories">
+                        <%= link_to '分类', categories_path(category_id: 1),  class: 'nav-link'%>
+                    </li>
+                    <li class='nav-item' id="nav_danche">
+                        <%= link_to '单车', categories_path(category_id: 1), class: 'nav-link', id: 'bicycle' %>
+                    </li>
+                    <li class='nav-item'>
+                        <%= link_to '婴儿车', categories_path(category_id: 3),  class: 'nav-link'%>
+                    </li>
+                    <li class='nav-item'>
+                        <%= link_to '活动单车', activity_path, class: 'nav-link'%>
+                    </li>
+                    <% if user_login? %>
+                        <li class="nav-ite">
+                            <%= link_to 'Logout', logout_path, class: "nav-link" %>
+                        </li>
+                        <li id="nav-item">
+                            <%= link_to '后台管理', admin_root_path, class: 'nav-link' %>
+                        </li>
+                        <% end %>
+                </ul>
+            </div>
     </nav>
     <section id="products_categories" style="display: none;">
-      <div>
-        <ul class="text-center">
-          <% @products_categories.each do |category| %>
-            <li>
-              <a href="/categories?category_id=<%= category.id %>">
-                <%= image_tag category.avatar %>
-                <p><%= category.name %></p>
-              </a>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+        <div>
+            <ul class="text-center">
+                <% @products_categories.each do |category| %>
+                    <li>
+                        <a href="/categories?category_id=<%= category.id %>">
+                            <%= image_tag category.avatar %>
+                                <p>
+                                    <%= category.name %>
+                                </p>
+                        </a>
+                    </li>
+                    <% end %>
+            </ul>
+        </div>
     </section>
     <% if notice %>
-      <p id="notice_message" style="display: none;"><%= notice %></p>
-    <% end %>
-    <br>
-    <div class="container-fluid">
-      <%= yield %>
-      <br>
-      <br>
-    </div>
-    <footer>
-      <br>
-      <div class="row">
-        <div class="col-4">1 of 3</div>
-        <div class="col-4">
-          <p class="text-center">在线客服 / 我的订单 / 使用条款 / 说明书下载</p>
-        </div>
-        <div class="col-4">
-          Tel 86-21-6233222
-        </div>
-      </div>
-      <br>
-      <br>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script type="text/javascript">
-      {
-        $('nav div ul li:eq(0)').mouseover((event) => {
-          $('section#products_categories').toggle().css({"position": "absolute", "z-index": 2, "width": "100%"});
-        });
-      
-        $('section#products_categories').on('mouseleave', (event) => {
-          $(event.currentTarget).toggle();
-        });
-      
-        $('nav div ul li:eq(1)').on('mouseover', () => {
-          $('section#products_categories').css({"display": "none"});
-        });
-      
-        $('nav > a').on('mouseover', () => {
-          $('section#products_categories').css({"display": "none"});
-        });
-        var messsage_val = $('p#notice_message').text();
-        if (messsage_val.length > 0) {
-          toastr.info(messsage_val);
-        }
-      }
-    </script>
-  </body>
+        <p id="notice_message" style="display: none;">
+            <%= notice %>
+        </p>
+        <% end %>
+            <br>
+            <div class="container-fluid">
+                <%= yield %>
+                    <br>
+                    <br>
+            </div>
+            <footer>
+                <br>
+                <div class="row">
+                    <div class="col-4">1 of 3</div>
+                    <div class="col-4">
+                        <p class="text-center">在线客服 / 我的订单 / 使用条款 / 说明书下载</p>
+                    </div>
+                    <div class="col-4">
+                        Tel 86-21-6233222
+                    </div>
+                </div>
+                <br>
+                <br>
+            </footer>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+            <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.js"></script>
+            
+            <script type="text/javascript">
+            {
+                $('nav div ul li:eq(0)').mouseover((event) => {
+                    $('section#products_categories').toggle().css({ "position": "absolute", "z-index": 2, "width": "100%" });
+                });
+
+                $('section#products_categories').on('mouseleave', (event) => {
+                    $(event.currentTarget).toggle("slow");
+                });
+
+                $('nav div ul li:eq(1)').on('mouseover', () => {
+                    $('section#products_categories').animate({ "display": "hidden" }, 5000);
+                });
+
+                $('nav > a').on('mouseover', () => {
+                    $('section#products_categories').animate({ "display": "hidden" }, 5000);
+                });
+                var messsage_val = $('p#notice_message').text();
+                if (messsage_val.length > 0) {
+                    toastr.info(messsage_val);
+                }
+                window.sr = ScrollReveal();
+                sr.reveal("#new_products");
+                sr.reveal("#bicycles");
+            }
+            </script>
+</body>
+
 </html>

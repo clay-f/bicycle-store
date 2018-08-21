@@ -1,5 +1,7 @@
 document.addEventListener("turbolinks:load", function() {
     clickNavigatorArrowRotateSuggestionList();
+        var img_src = $(".figure-img.img-thumbnail").attr("src");
+        $(".product_img").zoom({url: img_src});
 });
 
 function clickNavigatorArrowRotateSuggestionList() {
@@ -7,9 +9,9 @@ function clickNavigatorArrowRotateSuggestionList() {
     var curl_hostname = (location.hostname == "localhost" ? "http://localhost:3000" : "https://morning-castle-25459.herokuapp.com");
     for (let i = 0; i <= navigagor_item.length - 1; i++) {
         $(`div#${navigagor_item[i]}`).on("click", () => {
-                fetch(`${curl_hostname}/products/suggestion_product`)
-                .then(response => 
-                    response.json().then(body => ({data: body, status: response.status})))
+            fetch(`${curl_hostname}/products/suggestion_product`)
+                .then(response =>
+                    response.json().then(body => ({ data: body, status: response.status })))
                 .then(data => {
                     generatorSuggestionListAppendToHtml(data.data, navigagor_item[i]);
                 });
@@ -32,8 +34,9 @@ function generatorSuggestionListAppendToHtml(data, arrow_direct) {
                 `;
             return html_val;
         });
-        with($("div.suggest_products")) {
-            children().filter("div.guess_product_info").remove();
-            prepend(suggestion_list);
-        }
+    with($("div.suggest_products")) {
+        children().filter("div.guess_product_info").remove();
+        prepend(suggestion_list);
+    }
 }
+
